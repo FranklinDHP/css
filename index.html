@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Dia 3</title>
+    <link rel="stylesheet" href="/proyecto dia 3/estilos.css">
+</head>
+
+<body onload="cuentaRegresiva()">
+
+    <h2>RESPONDE EN 30 SEGUNDOS</h2>
+    <h1 id="cuentaRegresiva">Cuenta Regresiva</h1>
+
+    <audio id="audiofinJuego">
+        <source src="/proyecto dia 3/ALARMA SIRENA EFECTO DE SONIDO - SIREN ALARM (MP3).mp3" type="audio/mp3">
+        sonido no habilitado
+    </audio>
+
+    <button onclick="comenzarTiempo()">INICIAR JUEGO</button><br><br>
+
+
+    <p>1. Cual es la capital de antioquia</p>
+    <input type="text" id="Medellin">
+    <button onclick="verificar1()">Validar</button>
+
+    <p>2. Cuanto es 6 * 25</p>
+    <input type="text" id="150">
+    <button onclick="verificar2()">Validar</button>
+
+    <p>3. Color del caballo blanco de Simon Bolivar</p>
+    <input type="text" id="blanco">
+    <button onclick="verificar3()">Validar</button>
+
+    <p>4. Quien es Jesucristo</p>
+    <input type="text" id="nuestroSalvador">
+    <button onclick="verificar4()">Validar</button>
+
+    <p>5. Cual es el mejor celular del mundo</p>
+    <input type="text" id="iphone">
+    <button onclick="verificar5()">Validar</button><br><br>
+
+    <button id="refresh">Empezar de Nuevo</button>
+
+    <script>
+        let refresh = document.getElementById('refresh');
+        refresh.addEventListener('click', _ => {
+            location.reload();
+        })
+
+        let SonidoAlarma = document.getElementById("audiofinJuego");
+
+        function verificar1() {
+            let respuesta1 = document.getElementById("Medellin");
+            alert(" la respuesta es Es Medellin y tu pusistes: " + " " + respuesta1.value);
+
+        }
+
+        function verificar2() {
+            let respuesta2 = document.getElementById("150");
+            alert(" la respuesta es Es 150 y tu pusistes: " + " " + respuesta2.value);
+
+        }
+
+        function verificar3() {
+            let respuesta3 = document.getElementById("blanco");
+            alert("la respuesta es Es blanco y tu pusistes:" + " " + respuesta3.value);
+        }
+
+        function verificar4() {
+            let respuesta4 = document.getElementById("nuestroSalvador");
+            alert("la respuesta es Es nuestroSalvador y tu pusistes: " + " " + respuesta4.value);
+        }
+
+        function verificar5() {
+            let respuesta5 = document.getElementById("iphone")
+            alert(" la respuesta es Es iphone y tu pusistes: " + " " + respuesta5.value);
+        }
+
+        function comenzarTiempo() {
+
+            setTimeout(seAcaboElTiempo, 2000);
+
+        }
+
+        function seAcaboElTiempo() {
+            SonidoAlarma.play();
+            alert("GAME OVER")
+
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
